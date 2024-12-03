@@ -25,7 +25,6 @@ $createdTopics = $topic->getTopicsByUser($userId);
 $totalVotes = count($voteHistory);
 $totalCreatedTopics = count($createdTopics);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,45 +35,47 @@ $totalCreatedTopics = count($createdTopics);
 </head>
 <body>
     <div class="profile-container">
-        <h1>User Profile</h1>
-
-        <!-- Statistics Section -->
+        <h1>Welcome, <?php echo htmlspecialchars($username); ?>!</h1>
+        
         <div class="profile-stats">
+            <h2>Your Activity</h2>
             <p><strong>Total Topics Created:</strong> <?php echo $totalCreatedTopics; ?></p>
-            <p><strong>Total Votes:</strong> <?php echo $totalVotes; ?></p>
+            <p><strong>Total Votes Submitted:</strong> <?php echo $totalVotes; ?></p>
         </div>
 
-        <!-- Created Topics -->
-        <h2>Created Topics</h2>
-        <?php if (!empty($createdTopics)): ?>
-            <ul class="topic-list">
-                <?php foreach ($createdTopics as $topic): ?>
-                    <li>
-                        <strong><?php echo htmlspecialchars($topic['title']); ?></strong> - 
-                        <?php echo htmlspecialchars($topic['description']); ?>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        <?php else: ?>
-            <p>You haven't created any topics.</p>
-        <?php endif; ?>
+        <div class="created-topics">
+            <h2>Your Created Topics</h2>
+            <?php if (!empty($createdTopics)): ?>
+                <ul class="topics-list">
+                    <?php foreach ($createdTopics as $topic): ?>
+                        <li>
+                            <h3><?php echo htmlspecialchars($topic['title']); ?></h3>
+                            <p><?php echo htmlspecialchars($topic['description']); ?></p>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php else: ?>
+                <p>You haven't created any topics yet.</p>
+            <?php endif; ?>
+        </div>
 
-        <!-- Voting History -->
-        <h2>Voting History</h2>
-        <?php if (!empty($voteHistory)): ?>
-            <ul class="vote-history">
-                <?php foreach ($voteHistory as $vote): ?>
-                    <li>
-                        Voted <strong><?php echo htmlspecialchars($vote['vote_type']); ?></strong>
-                        on <strong><?php echo htmlspecialchars($vote['title']); ?></strong>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        <?php else: ?>
-            <p>You haven't voted.</p>
-        <?php endif; ?>
+        <div class="vote-history">
+            <h2>Your Voting History</h2>
+            <?php if (!empty($voteHistory)): ?>
+                <ul class="vote-list">
+                    <?php foreach ($voteHistory as $vote): ?>
+                        <li>
+                            <p>You <strong><?php echo htmlspecialchars($vote['vote_type']); ?></strong> on 
+                            <strong><?php echo htmlspecialchars($vote['title']); ?></strong></p>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php else: ?>
+                <p>You haven't voted yet.</p>
+            <?php endif; ?>
+        </div>
 
-        <p><a href="dashboard.php" class="back-link">Back to Dashboard</a></p>
+        <a href="dashboard.php" class="back-link">Back to Dashboard</a>
     </div>
 </body>
 </html>

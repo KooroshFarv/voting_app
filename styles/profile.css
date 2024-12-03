@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+}
+
+.profile-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.profile-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #77a9ff;
+}
+
+.profile-stats, .created-topics, .vote-history {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 5px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.profile-stats h2, .created-topics h2, .vote-history h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #4caf50;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+.topics-list, .vote-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.topics-list li, .vote-list li {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #2a2a2a;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    color: #ddd;
+}
+
+.topics-list li h3 {
+    font-size: 1.4rem;
+    color: #77a9ff;
+    margin-bottom: 5px;
+}
+
+.topics-list li p, .vote-list li p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #77a9ff;
+    border: 2px solid #77a9ff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.back-link:hover {
+    background-color: #77a9ff;
+    color: #121212;
+}

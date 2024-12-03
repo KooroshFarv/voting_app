@@ -1,8 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    background: black;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -13,7 +12,7 @@ body {
 
 h1 {
     font-size: 2.5rem;
-    color: #77a9ff;
+    color: #fff;
     margin-bottom: 30px;
     text-align: center;
 }
@@ -29,7 +28,7 @@ ul {
 }
 
 li {
-    background-color: #1e1e2f;
+    background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     width: 300px;
@@ -42,17 +41,17 @@ li {
 
 li h3 {
     font-size: 1.5rem;
-    color: #4caf50;
+    color: #000;
     margin: 0 0 10px;
 }
 
 li p {
-    color: #bbb;
+    color: #000;
     margin: 0 0 20px;
 }
 
 button {
-    background-color: #4caf50;
+    background-color: #333;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -63,7 +62,7 @@ button {
 }
 
 button:hover {
-    background-color: #3e8e41;
+    background-color: #8b8686;
     transform: translateY(-3px);
 }
 
@@ -72,21 +71,21 @@ button:first-of-type {
 }
 
 button:last-of-type {
-    background-color: #ff4c4c;
+    background-color: #333;
 }
 
 button:last-of-type:hover {
-    background-color: #d93636;
+    background-color: #000;
 }
 
 a.back-link {
     margin-top: 20px;
     font-size: 1rem;
-    color: #77a9ff;
+    color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a.back-link:hover {
-    color: #4caf50;
+    color: red;
 }
